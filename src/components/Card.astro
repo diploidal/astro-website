@@ -5,15 +5,15 @@ export interface Props {
   body: string;
 }
 
-const { dark = false } = Astro.props as Props;
+// const { dark = false } = Astro.props as Props;
 
-const { title, body } = Astro.props as Props;
+const { title, body, dark = false } = Astro.props as Props;
 ---
 
 <!-- <div class={`card ${dark && 'dark'}`}>
   <slot />
 </div> -->
-<div class="card">
+<div class={`card ${dark && 'dark'}`}>
   <h3>{title}</h3>
   <p>{body}</p>
 </div>
